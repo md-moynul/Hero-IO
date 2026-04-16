@@ -1,6 +1,7 @@
 import NavbarLinks from "./NavbarLinks";
 import logo from '../../assets/img/logo.png'
 import { Link } from "react-router";
+import { FaGithub } from "react-icons/fa";
 
 const Navbar = () => {
     const links = [
@@ -41,7 +42,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <a className="btn bg-linear-225 from-[#632EE3] to-[#9F62F2] text-base-100 flex justify-center gap-2"><FaGithub />Contribute</a>
                 </div>
             </div>
         </div>

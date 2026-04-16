@@ -9,7 +9,7 @@ const HeroSection = () => {
                 <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold ">We Build <br />Productive Apps</h1>
                 <p className='text-gray-400'>At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.<br />Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
             </div>
-            <div className='flex items-center w-[30%] gap-4 mx-auto '>
+            <div className='flex justify-center gap-4 mx-auto '>
                 <button className='flex gap-2.5 items-center btn py-7'><img src={playStore} alt="" />Google Play</button>
                 <button className='flex gap-2.5 items-center btn py-7'><img src={apple} alt="" />App Store</button>
             </div>

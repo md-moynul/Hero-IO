@@ -6,19 +6,19 @@ const TrustedByMillions = () => {
             <div className='container mx-auto space-y-10 '>
                 <h2 className='font-bold text-2xl md:text-3xl lg:text-5xl '>Trusted by Millions, Built for You</h2>
                 <div className='grid grid-cols-3 '>
-                    <div>
-                        <p>Total Downloads</p>
-                        <h3>29.6M</h3>
+                    <div className='space-y-2 md:space-y-4 '>
+                        <p >Total Downloads</p>
+                        <h3 className='text-3xl lg:text-6xl font-extrabold '>29.6M</h3>
                         <p>21% more than last month</p>
                     </div>
-                    <div>
+                    <div className='space-y-2 md:space-y-4 '>
                         <p>Total Reviews</p>
-                        <h3>906K</h3>
+                        <h3 className='text-3xl lg:text-6xl font-extrabold '>906K</h3>
                         <p>46% more than last month</p>
                     </div>
-                    <div>
+                    <div className='space-y-2 md:space-y-4 '>
                         <p>Active Apps</p>
-                        <h3>132+</h3>
+                        <h3 className='text-3xl lg:text-6xl font-extrabold '>132+</h3>
                         <p>31 more will Launch</p>
                     </div>
                 </div>
