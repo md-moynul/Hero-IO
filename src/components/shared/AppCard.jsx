@@ -1,13 +1,14 @@
 import React from 'react';
 import { FiDownload } from 'react-icons/fi';
 import { IoMdStar } from 'react-icons/io';
+import { Link } from 'react-router';
 
 const AppCard = ({ app }) => {
-    const { image, title, downloads, ratingAvg } = app
+    const {id, image, title, downloads, ratingAvg } = app
     const downloadFast = downloads.slice(0,1);
     const downloadLast = downloads.slice(-1);
     return (
-        <div className='space-y-4 shadow rounded-xl'>
+        <Link to={`/apps/${id}`} className='space-y-4 shadow rounded-xl'>
             <div className='bg-base-300 py-8'>
                 <img src={image} className='h-40 mx-auto' alt="" />
             </div>
@@ -20,7 +21,7 @@ const AppCard = ({ app }) => {
                     <p className='flex gap-1 items-center px-3 py-1.5 rounded bg-orange-100 text-orange-500'><IoMdStar />{ratingAvg}</p>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
