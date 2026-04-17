@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export const useData = () => {
+ const useData = () => {
     const [apps, setApps] = useState([]);
     const [loading , setLoading ] = useState(true)
     useEffect(() => {
@@ -10,7 +10,7 @@ export const useData = () => {
           setTimeout( () => {
             setApps(data)
             setLoading(false)
-          } , 1000)
+          } , 1500)
             
         }
         fetchData()
@@ -19,3 +19,4 @@ export const useData = () => {
     return {apps,loading}
 };
 
+export default useData;
