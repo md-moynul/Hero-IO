@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router';
 import useData from '../../hooks/useData';
 import { RotateLoader } from 'react-spinners';
@@ -7,12 +7,15 @@ import rating from '../../assets/img/icon-ratings.png'
 import review from '../../assets/img/icon-review.png'
 import Chart from '../../components/Chart';
 import appError from '../../assets/img/App-Error.png'
+import { InstalledAppContext } from '../../context/InstalledAppContext';
+import { toast } from 'react-toastify';
 
 const AppDetails = () => {
+    const [installedApps, setInstalledApps] = useContext(InstalledAppContext)
     const { appId } = useParams()
-    console.log(appId);
+    // console.log(appId);
     const { apps, loading } = useData();
-    console.log(apps);
+    // console.log(apps);
     if (loading) {
         return (
             <div className='container text-center flex items-center justify-center min-h-[50vh]'>
@@ -50,6 +53,17 @@ const AppDetails = () => {
         ratings,
         description
     } = targetedApp;
+    const handelInstall = ({ targetedApp }) => {
+        const isEasiest = installedApps.find(app => app.id === targetedApp.id)
+        if (isEasiest) {
+            toast.error(`${title} is already installed`)
+        } else {
+            setInstalledApps([...installedApps, targetedApp])
+             toast.success(`${title} is successfully installed`)
+        }
+      
+
+    }
     const downloadFast = downloads.slice(0, 1);
     const downloadLast = downloads.slice(-1);
     const reviewsFast = parseInt(reviews) / 1000;
@@ -87,7 +101,7 @@ const AppDetails = () => {
                                 <p className='text-4xl font-extrabold text-center'>{reviewsFast}K</p>
                             </div>
                         </div>
-                        <button className='btn btn-success text-white text-xl font-semibold'>Install Now ({size} MB)</button>
+                        <button onClick={() => { handelInstall({ targetedApp }) }} className='btn btn-success text-white text-xl font-semibold'>Install Now ({size} MB)</button>
                     </div>
                 </div>
                 <hr className="text-base-300" />

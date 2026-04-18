@@ -3,7 +3,7 @@ import { Bar, CartesianGrid, ComposedChart, LabelList, XAxis, YAxis } from 'rech
 
 
 const Chart = ({ ratings }) => {
-    console.log(ratings);
+    // console.log(ratings);
 
     return (
       <ComposedChart
